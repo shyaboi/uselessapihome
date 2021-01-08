@@ -8,7 +8,7 @@ const Example = (props) => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <Container>
+    <Container fluid>
       <Jumbotron fluid id="jumbo">
         <Container fluid>
           <h1 className="display-3">UselessAPI.com</h1>
