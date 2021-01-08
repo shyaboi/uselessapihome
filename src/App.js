@@ -21,10 +21,11 @@ const Example = (props) => {
         </DropdownToggle>
       <DropdownMenu>
         <DropdownItem header>Node.js Based APIs</DropdownItem>
+        <a href='https://openflags.net'><DropdownItem>Open Flags API</DropdownItem></a>
         <a href='https://uselessapi.com/api/name-gen'><DropdownItem>Name Generator 2</DropdownItem></a>
         <DropdownItem divider />
         <DropdownItem header>Python Based APIs</DropdownItem>
-        <DropdownItem> Sorting Algorithms</DropdownItem>
+        <a href="https://sortpy.herokuapp.com/"><DropdownItem> Sorting Algorithms</DropdownItem></a>
       </DropdownMenu>
     </Dropdown>
         </Container>
