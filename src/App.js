@@ -37,7 +37,7 @@ const Example = (props) => {
               <a href="https://openflags.net">
                 <DropdownItem>Open Flags API</DropdownItem>
               </a>
-              <a href="https://shyaboi.github.io/TopWord">
+              <a href="https://shyaboi.github.io/namegen2/">
                 <DropdownItem>Name Generator 2</DropdownItem>
               </a>
               <DropdownItem divider />
@@ -65,7 +65,7 @@ const Example = (props) => {
             of words in the API as well as showing all words based on the first
             letter of the word.
           </CardText>
-          <a href="https://shyaboi.github.io/TopWord">
+          <a href="https://shyaboi.github.io/namegen2/">
             {" "}
             <Button>UselessAPI Page</Button>{" "}
           </a>
