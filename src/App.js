@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Jumbotron, Container } from 'reactstrap';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, Button, CardTitle, CardText, CardImg, CardColumns } from 'reactstrap';
+import {  Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, Button, CardTitle, CardText, CardImg, CardColumns } from 'reactstrap';
 
 const Example = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -8,7 +8,7 @@ const Example = (props) => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div>
+    <Container>
       <Jumbotron fluid id="jumbo">
         <Container fluid>
           <h1 className="display-3">UselessAPI.com</h1>
@@ -53,7 +53,7 @@ const Example = (props) => {
       </Card>
 
       </CardColumns>
-          </div>
+          </Container>
   );
 };
 
