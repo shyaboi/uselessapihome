@@ -42,7 +42,7 @@ const Example = (props) => {
               </a>
               <DropdownItem divider />
               <DropdownItem header>Python Based APIs</DropdownItem>
-              <a href="https://sortpy.herokuapp.com/">
+              <a href="https://uselessapi.com/api/py-sort/home">
                 <DropdownItem> Sorting Algorithms</DropdownItem>
               </a>
             </DropdownMenu>
@@ -84,7 +84,7 @@ const Example = (props) => {
             availible are Bubble Sort, and insertSort. Bubble sort currently has
             a direct result option, and a step by step return option.{" "}
           </CardText>
-          <a href="https://sortpy.herokuapp.com/">
+          <a href="https://uselessapi.com/api/py-sort/home">
             {" "}
             <Button>UselessAPI Page</Button>{" "}
           </a>
