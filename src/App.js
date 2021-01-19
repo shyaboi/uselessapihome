@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Jumbotron, Container } from "reactstrap";
 import {
   Dropdown,
@@ -14,11 +14,32 @@ import {
   Row,
   Col
 } from "reactstrap";
+var derta
 
-const Example = (props) => {
+
+const Home = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [routes, setRoutes] = useState([])
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+
+   
+  useEffect(() => {
+
+    fetch('http://localhost:4444/all-routes').then(function (response) {
+      // The API call was successful!
+      return response.json();
+    }).then(function (data) {
+      // This is the JSON from our response
+      derta = data
+      setRoutes(derta);
+    }).catch(function (err) {
+      // There was an error
+      console.warn('Something went wrong.', err);
+    });
+  });
+
 
   return (
     <Container>
@@ -111,4 +132,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default Home;
