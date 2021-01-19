@@ -50,7 +50,10 @@ const Home = (props) => {
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
-                <br></br>
+                <a href={"http://localhost:3001"}>
+                  
+                  <Button color='info'>Make a New Route!</Button>
+                </a>
                 <p>User Made APIs</p>
                 <DropdownToggle caret color='info'>APIs</DropdownToggle>
                 <DropdownMenu>
