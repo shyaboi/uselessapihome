@@ -7,7 +7,9 @@ import {
   DropdownItem,
   Card,
   Button,
-  CardTitle,
+  CardBody,
+  CardTitle, 
+  CardSubtitle,
   CardText,
   CardImg,
   CardColumns,
@@ -43,15 +45,55 @@ const Home = (props) => {
 
   return (
     <Container>
+            <Row>
+      <Col>
+      <Jumbotron fluid id="jumbo">
+        <Container>
+          <h1 className="display-3 d-none d-sm-block" >UselessAPI.com</h1>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <p className="lead ">Welcome to UseLessAPI.com</p>
+            <br></br>
+            <p>User Made APIs</p>
+            <DropdownToggle caret>APIs</DropdownToggle>
+            <DropdownMenu>
+            <DropdownItem header>User Created Routes</DropdownItem>
+          {routes.map(routes => (
+              <a href={"http://localhost:4444/uc"+routes}>
+                <DropdownItem>{routes}</DropdownItem>
+              </a>
+
+))}
+</DropdownMenu>
+
+          </Dropdown>
+        </Container>
+      </Jumbotron>
+      </Col>
+      </Row>
+      <Row>
+        <Col>
+          {routes.map(routes => (
+                <Card>
+        <CardBody>
+          <CardTitle tag="h5">{routes}</CardTitle>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">{routes}</CardSubtitle>
+          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+         <a href={"http://localhost:4444/uc"+routes}> <Button>Take a look at the raw output</Button></a>
+        </CardBody>
+      </Card>
+              
+          ))}
+        </Col>
+      </Row>
       <Row>
       <Col>
       <Jumbotron fluid id="jumbo">
         <Container>
-          <h3 className="display-4">UselessAPI.com</h3>
+          <h4 className="display-5">Example APIs</h4>
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <p className="lead">Welcome to uselessapi.com</p>
+            <p className="lead">These are some things I made</p>
             <br></br>
-            <p>A collection of APIs</p>
+            <p>Checkout some example APIs</p>
             <DropdownToggle caret>APIs</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Node.js Based APIs</DropdownItem>
@@ -128,6 +170,7 @@ const Home = (props) => {
           </a>
         </Card>
       </CardColumns>
+
     </Container>
   );
 };
