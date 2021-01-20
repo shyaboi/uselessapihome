@@ -7,70 +7,118 @@ import {
   DropdownItem,
   Card,
   Button,
+  CardBody,
   CardTitle,
+  CardSubtitle,
   CardText,
   CardImg,
   CardColumns,
   Row,
-  Col
+  Col,
 } from "reactstrap";
-var derta
-
+var derta;
 
 const Home = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [routes, setRoutes] = useState([])
+  const [routes, setRoutes] = useState([]);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
-
-   
   useEffect(() => {
-
-    fetch('http://localhost:4444/all-routes').then(function (response) {
-      // The API call was successful!
-      return response.json();
-    }).then(function (data) {
-      // This is the JSON from our response
-      derta = data
-      setRoutes(derta);
-    }).catch(function (err) {
-      // There was an error
-      console.warn('Something went wrong.', err);
-    });
+    fetch("http://localhost:4444/all-routes")
+      .then(function (response) {
+        // The API call was successful!
+        return response.json();
+      })
+      .then(function (data) {
+        // This is the JSON from our response
+        derta = data;
+        setRoutes(derta);
+      })
+      .catch(function (err) {
+        // There was an error
+        console.warn("Something went wrong.", err);
+      });
   });
-
 
   return (
     <Container>
       <Row>
-      <Col>
-      <Jumbotron fluid id="jumbo">
-        <Container>
-          <h3 className="display-4">UselessAPI.com</h3>
-          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <p className="lead">Welcome to uselessapi.com</p>
-            <br></br>
-            <p>A collection of APIs</p>
-            <DropdownToggle caret>APIs</DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Node.js Based APIs</DropdownItem>
-              <a href="https://openflags.net">
-                <DropdownItem>Open Flags API</DropdownItem>
-              </a>
-              <a href="https://shyaboi.github.io/namegen2/">
-                <DropdownItem>Name Generator 2</DropdownItem>
-              </a>
-              <DropdownItem divider />
-              <DropdownItem header>Python Based APIs</DropdownItem>
-              <a href="https://uselessapi.com/api/py-sort/home">
-                <DropdownItem> Sorting Algorithms</DropdownItem>
-              </a>
-            </DropdownMenu>
-          </Dropdown>
-        </Container>
-      </Jumbotron>
-      </Col>
+        <Col>
+          <Jumbotron fluid id="jumbo">
+            <Container>
+              <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
+              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                <p className="lead ">Welcome to UseLessAPI.com</p>
+                <a href={"http://localhost:3001"}>
+                  
+                  <Button color='info'>Make a New Route!</Button>
+                </a>
+                <p>User Made APIs</p>
+                <DropdownToggle caret color='info'>APIs</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>User Created Routes</DropdownItem>
+                  {routes.map((routes) => (
+                    <a href={"http://localhost:4444/uc" + routes}>
+                      <DropdownItem color='info'>{routes}</DropdownItem>
+                    </a>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
+            </Container>
+          </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          {routes.map((routes) => (
+            <Card>
+              <CardBody>
+                <CardTitle tag="h5">{routes}</CardTitle>
+                <CardSubtitle tag="h6" className="mb-2 text-muted">
+                  {routes}
+                </CardSubtitle>
+                <CardText>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </CardText>
+                <a href={"http://localhost:4444/uc" + routes}>
+                  {" "}
+                  <Button color='info'>Take a look at the raw output</Button>
+                </a>
+              </CardBody>
+            </Card>
+          ))}
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Jumbotron fluid id="jumbo">
+            <Container>
+              <h4 className="display-5">Example APIs</h4>
+              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                <p className="lead">These are some things I made</p>
+                <br></br>
+                <p>Checkout some example APIs</p>
+                <DropdownToggle caret color='info'>APIs</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Node.js Based APIs</DropdownItem>
+                  <a href="https://openflags.net">
+                    <DropdownItem>Open Flags API</DropdownItem>
+                  </a>
+                  <a href="https://shyaboi.github.io/namegen2/">
+                    <DropdownItem>Name Generator 2</DropdownItem>
+                  </a>
+                  <DropdownItem divider />
+                  <DropdownItem header>Python Based APIs</DropdownItem>
+                  <a href="https://uselessapi.com/api/py-sort/home">
+                    <DropdownItem> Sorting Algorithms</DropdownItem>
+                  </a>
+                </DropdownMenu>
+              </Dropdown>
+            </Container>
+          </Jumbotron>
+        </Col>
       </Row>
       <CardColumns>
         <Card body className="text-center">
@@ -88,7 +136,7 @@ const Home = (props) => {
           </CardText>
           <a href="https://shyaboi.github.io/namegen2/">
             {" "}
-            <Button>UselessAPI Page</Button>{" "}
+            <Button color='info'>UselessAPI Page</Button>{" "}
           </a>
         </Card>
         <Card body className="text-center">
@@ -107,7 +155,7 @@ const Home = (props) => {
           </CardText>
           <a href="https://uselessapi.com/api/py-sort/home">
             {" "}
-            <Button>UselessAPI Page</Button>{" "}
+            <Button color='info'>UselessAPI Page</Button>{" "}
           </a>
         </Card>
         <Card body className="text-center">
@@ -124,7 +172,7 @@ const Home = (props) => {
           </CardText>
           <a href="https://openflags.net">
             {" "}
-            <Button>UselessAPI Page</Button>{" "}
+            <Button color='info'>UselessAPI Page</Button>{" "}
           </a>
         </Card>
       </CardColumns>
