@@ -52,7 +52,7 @@ const Home = (props) => {
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
-                <a href={"http://uselessapi.com/u-c/code-editor"}>
+                <a href={"/code-editor"}>
                   
                   <Button color='info'>Make a New Route!</Button>
                 </a>
