@@ -20,12 +20,14 @@ var derta;
 
 const Home = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpenLow, setDropdownOpenLow] = useState(false);
   const [routes, setRoutes] = useState([]);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggleLow = () => setDropdownOpenLow((prevState) => !prevState);
 
   useEffect(() => {
-    fetch("http://localhost:4444/all-routes")
+    fetch("/u-c/all-routes")
       .then(function (response) {
         // The API call was successful!
         return response.json();
@@ -50,7 +52,7 @@ const Home = (props) => {
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
-                <a href={"http://localhost:3001"}>
+                <a href={"http://uselessapi.com/u-c/code-editor"}>
                   
                   <Button color='info'>Make a New Route!</Button>
                 </a>
@@ -59,7 +61,7 @@ const Home = (props) => {
                 <DropdownMenu>
                   <DropdownItem header>User Created Routes</DropdownItem>
                   {routes.map((routes) => (
-                    <a href={"http://localhost:4444/uc" + routes}>
+                    <a href={"http://uselessapi.com/u-c-r" + routes}>
                       <DropdownItem color='info'>{routes}</DropdownItem>
                     </a>
                   ))}
@@ -82,7 +84,7 @@ const Home = (props) => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </CardText>
-                <a href={"http://localhost:4444/uc" + routes}>
+                <a href={"/u-c-r" + routes}>
                   {" "}
                   <Button color='info'>Take a look at the raw output</Button>
                 </a>
@@ -96,7 +98,7 @@ const Home = (props) => {
           <Jumbotron fluid id="jumbo">
             <Container>
               <h4 className="display-5">Example APIs</h4>
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+              <Dropdown isOpen={dropdownOpenLow} toggle={toggleLow}>
                 <p className="lead">These are some things I made</p>
                 <br></br>
                 <p>Checkout some example APIs</p>
@@ -144,14 +146,15 @@ const Home = (props) => {
           <CardImg
             top
             width="100%"
-            src="https://i.ibb.co/NSbVQnd/2021-01-06-22h47-17.png"
+            // src="https://i.ibb.co/NSbVQnd/2021-01-06-22h47-17.png"
+            src="https://i.ibb.co/yfBJLHf/construct.jpg"
             alt="Card image cap"
           />
           <CardText>
             PySort API is an API that will take a given array of numbers, and
             sort them with the given sorting method. The current methods
             availible are Bubble Sort, and insertSort. Bubble sort currently has
-            a direct result option, and a step by step return option.{" "}
+            a direct result option, and a step by step return option.(Currently Offline)
           </CardText>
           <a href="https://uselessapi.com/api/py-sort/home">
             {" "}
