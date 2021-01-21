@@ -22,7 +22,7 @@ import {
   
       setIsLoading(true);
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://uselessapi.com/u-c/new", true);
+      xhr.open("POST", "/u-c/new", true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send(
         JSON.stringify({
