@@ -41,9 +41,8 @@ const NavB = (props) => {
             <NavItem>
               <NavLink href="/editor">Editor</NavLink>
             </NavItem>
-
           </Nav>
-          <NavbarText>API.com</NavbarText>
+          <NavbarText><NavLink href="/">API.com</NavLink></NavbarText>
         </Collapse>
       </Navbar>
     </div>
