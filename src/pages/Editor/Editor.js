@@ -13,8 +13,8 @@ import {
   
   function Editor() {
     const [isLoading, setIsLoading] = useState(false);
-    const [route, setRoute] = useState("");
-    const [funk, setFunk] = useState("");
+    let [route, setRoute] = useState("");
+    let [funk, setFunk] = useState("");
   
     const onSubmit = async (event) => {
       // prevent redirect
@@ -34,6 +34,9 @@ import {
   
       // reset form and loading state
       setIsLoading(false);
+      alert(`your new route can be see at https://uselessapi/u-c-r${route}`)
+      
+      
     };
     return (
       <Container className="App">
@@ -49,7 +52,8 @@ import {
             <Col>
               <FormGroup>
                 <Label for="exampleEmail">
-                  Route Example:(https://uselessapi.com/api/u-c-r/my-test)
+                  Route will be hosted at https://uselessapi/u-c-r{route} 
+                  {/* Example:(https://uselessapi.com/api/u-c-r/my-test) */}
                 </Label>
                 <Input
                   type="route"
@@ -63,7 +67,7 @@ import {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="exampleSelect">Select</Label>
+                <Label for="exampleSelect">Select(not used yet)</Label>
                 <Input type="select" name="select" id="exampleSelect">
                   <option>1</option>
                   <option>2</option>
@@ -81,13 +85,13 @@ import {
                   value={funk}
                   onChange={(e) => setFunk(e.target.value)}
                   id="funktion"
-                  placeholder="console.log('hiworld')"
+                  placeholder="response.send('hiworld')"
                   type="textarea"
                   name="funktion"
                 />
               </FormGroup>
   
-              <Button type="submit" color="primary">
+              <Button type="submit" color="info">
                 Submit
               </Button>
             </Col>
