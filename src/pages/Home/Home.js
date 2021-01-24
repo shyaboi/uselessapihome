@@ -28,7 +28,7 @@ const Home = (props) => {
   const toggleLow = () => setDropdownOpenLow((prevState) => !prevState);
 
   useEffect(async() => {
-    fetch("http://localhost:4444/u-c/all-routes")
+    fetch("/u-c/all-routes")
       .then(function (response) {
         // The API call was successful!
         return response.json();
