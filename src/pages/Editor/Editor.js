@@ -21,7 +21,6 @@ import "ace-builds/src-noconflict/theme-terminal";
 var finalFunction
 function onChange(newValue) {
   finalFunction = newValue
-  console.log(finalFunction);
 }
 // var Mona = require('../src/Monaco-Editor/Monaco')
 
@@ -35,6 +34,8 @@ function Editor() {
   const onSubmit = async (event) => {
     // prevent redirect
     event.preventDefault();
+    console.log(finalFunction);
+
     setFunk(finalFunction)
     setIsLoading(true);
     var xhr = new XMLHttpRequest();
