@@ -27,8 +27,8 @@ const Home = (props) => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const toggleLow = () => setDropdownOpenLow((prevState) => !prevState);
 
-  useEffect(() => {
-    fetch("/u-c/all-routes")
+  useEffect(async() => {
+    fetch("http://localhost:4444/u-c/all-routes")
       .then(function (response) {
         // The API call was successful!
         return response.json();
@@ -51,6 +51,7 @@ const Home = (props) => {
           <Jumbotron fluid id="jumbo">
             <Container>
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
+              <a href='/editor'><Button color='info'>Make Your Own API</Button></a>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
                 <p>User Made APIs</p>
