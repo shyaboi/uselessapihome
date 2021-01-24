@@ -34,7 +34,7 @@ function Editor() {
   const onSubmit = async (event) => {
     // prevent redirect
     event.preventDefault();
-  console.log(finalFunction);
+    console.log(finalFunction);
 
     setFunk(finalFunction)
     setIsLoading(true);
