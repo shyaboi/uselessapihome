@@ -27,7 +27,6 @@ function onChange(newValue) {
 
 function Editor() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const [isLoading, setIsLoading] = useState(false);
   let [route, setRoute] = useState("");
@@ -55,9 +54,9 @@ function Editor() {
   return (
     <Container className="App">
       <Row>
-        <Col>
-          <Label for="exampleText">
-            <h1>Make your thing</h1>
+        <Col id='editor-head'>
+          <Label for="exampleText" >
+            <h1 >Make your useless thing</h1>
           </Label>
         </Col>
       </Row>
@@ -66,7 +65,7 @@ function Editor() {
           <Col>
             <FormGroup>
               <Label for="exampleEmail">
-                Route will be hosted at https://uselessapi/u-c-r{route}
+                Route will be hosted at https://uselessapi/u-c-r/{route}
                 {/* Example:(https://uselessapi.com/api/u-c-r/my-test) */}
               </Label>
               <Input
