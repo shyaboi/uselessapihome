@@ -44,7 +44,7 @@ function Editor() {
     xhr.send(
       JSON.stringify({
         route: route,
-        funktion: funk,
+        funktion: finalFunction,
       })
     );
     // do something asynchronous that takes time, this function is just an example
