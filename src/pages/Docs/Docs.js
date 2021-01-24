@@ -16,6 +16,7 @@ import {
 } from "react-router-dom";
 import GettingStarted from '../../pages/Docs/GettingStarted'
 import HelloWorld from '../../pages/Docs/HelloWorld'
+import Routing from '../../pages/Docs/Routing'
 
 
 const Docs = (props) => {
@@ -30,11 +31,15 @@ const Docs = (props) => {
           <ListGroup>
             <ListGroupItem className="justify-content-between">
                     <NavLink href="/docs/getting-started/">Getting Started</NavLink>
-                    
             </ListGroupItem>
             <ListGroupItem className="justify-content-between">
             <NavLink href="/docs/hello-world">
                       Hello World Examples
+                    </NavLink>
+            </ListGroupItem>
+            <ListGroupItem className="justify-content-between">
+            <NavLink href="/docs/routing">
+                      Routing
                     </NavLink>
             </ListGroupItem>
           </ListGroup>
@@ -45,6 +50,9 @@ const Docs = (props) => {
     <Route exact path="/docs/getting-started">
       <GettingStarted />
     </Route>
+    <Route exact path="/docs/routing">
+      <Routing />
+    </Route>
     <Route exact path="/docs/hello-world">
       <HelloWorld />
     </Route>
@@ -52,18 +60,6 @@ const Docs = (props) => {
         </Col>
       </Row>
     </Container>
-
-
-
-
-
-
-
-
-
-
-
-
 </Router>
 
   );

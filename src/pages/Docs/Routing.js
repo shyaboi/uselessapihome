@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Nav from './components/Nav/Nav'
 import {
-  Container,
+    Container,
+  Row,
+  Col,
 } from "reactstrap";
 
 
-const Apps = (props) => {
+const Routing = (props) => {
+
+
   return (
     <Container fluid>
-      <Nav />
+fggjhgfjfdgjf
     </Container>
   );
 };
 
-export default Apps;
+export default Routing;
