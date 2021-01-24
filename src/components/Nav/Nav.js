@@ -7,14 +7,11 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText
 } from 'reactstrap';
 import Home from '../../pages/Home/Home'
 import Editor from '../../pages/Editor/Editor'
+import Docs from '../../pages/Docs/Docs'
 import {
     BrowserRouter as Router,
     Switch,
@@ -41,6 +38,9 @@ const NavB = (props) => {
             <NavItem>
               <NavLink href="/editor">Editor</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/docs">Documentation</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText><NavLink href="/">API.com</NavLink></NavbarText>
         </Collapse>
@@ -56,6 +56,9 @@ const NavB = (props) => {
     </Route>
     <Route path="/editor">
       <Editor />
+    </Route>
+    <Route path="/docs">
+      <Docs />
     </Route>
   </Switch>
 </div>
