@@ -7,13 +7,13 @@ import {
 import CodeBlock from "@tenon-io/tenon-codeblock";
 
 
-const GettingStarted = (props) => {
+const HelloWorld = (props) => {
 
 
   return (
-    <Container fluid id='hello-world-container'>
+    <Container fluid >
         <Row>
-            <Col>
+            <Col className='doc-headers'>
         <h1>
             Hello World
         </h1>
@@ -29,4 +29,4 @@ const GettingStarted = (props) => {
   );
 };
 
-export default GettingStarted;
+export default HelloWorld;

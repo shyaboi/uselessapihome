@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense  } from "react";
 import {
   Jumbotron,
   Container,
@@ -53,11 +53,13 @@ const Home = (props) => {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem header>User Created Routes</DropdownItem>
+                  <Suspense fallback={<div>Loading...</div>}>
                   {routes.map((routes) => (
                     <a href={"http://uselessapi.com/u-c-r" + routes}>
                       <DropdownItem color="info">{routes}</DropdownItem>
                     </a>
                   ))}
+                  </Suspense>
                 </DropdownMenu>
               </Dropdown>
             </Container>
@@ -66,6 +68,7 @@ const Home = (props) => {
       </Row>
       <Row>
         <Col>
+        <Suspense fallback={<div>Fetching latest UseLess routes...</div>}>
           {routes.map((routes) => (
             <Card>
               <CardBody>
@@ -84,6 +87,7 @@ const Home = (props) => {
               </CardBody>
             </Card>
           ))}
+          </Suspense>
         </Col>
       </Row>
       <Row>
@@ -154,7 +158,7 @@ const Home = (props) => {
           </CardText>
           <a href="https://uselessapi.com/api/py-sort/home">
             {" "}
-            <Button color="info">UselessAPI Page</Button>{" "}
+            <Button color="info">UselessAPI Page</Button>{" "}s
           </a>
         </Card>
         <Card body className="text-center">

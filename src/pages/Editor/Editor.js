@@ -50,7 +50,9 @@ function Editor() {
     // do something asynchronous that takes time, this function is just an example
     // reset form and loading state
     setIsLoading(false);
-    alert(`your new route can be see at https://uselessapi/u-c-r${route}`);
+    alert(`Redirecting you to https://uselessapi/u-c-r/${route}`);
+    window.location.replace(`https://uselessapi.com/u-c-r/${route}`)
+    // alert(`your new route can be see at https://uselessapi/u-c-r${route}`);
   };
   return (
     <Container className="App">

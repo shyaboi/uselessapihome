@@ -27,19 +27,19 @@ const Docs = (props) => {
 
     <Container fluid>
       <Row>
-        <Col xs="3">
+        <Col xs="4">
           <ListGroup>
             <ListGroupItem className="justify-content-between">
                     <NavLink href="/docs/getting-started/">Getting Started</NavLink>
             </ListGroupItem>
             <ListGroupItem className="justify-content-between">
-            <NavLink href="/docs/hello-world">
-                      Hello World Examples
+            <NavLink href="/docs/routing">
+                      Routing
                     </NavLink>
             </ListGroupItem>
             <ListGroupItem className="justify-content-between">
-            <NavLink href="/docs/routing">
-                      Routing
+            <NavLink href="/docs/hello-world">
+                      Hello World Examples
                     </NavLink>
             </ListGroupItem>
           </ListGroup>
