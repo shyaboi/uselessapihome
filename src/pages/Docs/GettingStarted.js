@@ -36,8 +36,9 @@ const GettingStarted = (props) => {
     <hr>
     </hr>
     <p>
-
+        This will take you to the UseLess code editor (made with <a href='https://github.com/securingsincity/react-ace#readme'> React-Ace Editor</a> )
     </p>
+   
     </Col>
 </Row>
     </Container>

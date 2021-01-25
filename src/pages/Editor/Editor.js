@@ -81,7 +81,7 @@ function Editor() {
               />
             </FormGroup>
           </Col>
-          <Col>
+          {/* <Col>
             <FormGroup>
               <Label for="exampleSelect">Select(not used yet)</Label>
               <Input type="select" name="select" id="exampleSelect">
@@ -92,7 +92,7 @@ function Editor() {
                 <option>5</option>
               </Input>
             </FormGroup>
-          </Col>
+          </Col> */}
         </Row>
         <Row fluid>
           <Col xs='3'>
