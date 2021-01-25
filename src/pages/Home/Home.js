@@ -30,7 +30,7 @@ const Home = (props) => {
   const getAll = async ()=> {
     let response = await fetch(`https://uselessapi.com/u-c/all-routes`);
     let data = await response.json()
-    derta = data
+    derta = await data
     setRoutes(derta)
   }
   useEffect(() => {
@@ -77,8 +77,7 @@ const Home = (props) => {
                   {routes}
                 </CardSubtitle>
                 <CardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  In the future the route/API description will go here.
                 </CardText>
                 <a href={"/u-c-r" + routes}>
                   {" "}
