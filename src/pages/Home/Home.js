@@ -27,21 +27,14 @@ const Home = (props) => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const toggleLow = () => setDropdownOpenLow((prevState) => !prevState);
 
-  useEffect(async() => {
-    fetch("/u-c/all-routes")
-      .then(function (response) {
-        // The API call was successful!
-        return response.json();
-      })
-      .then(function (data) {
-        // This is the JSON from our response
-        derta = data;
-        setRoutes(derta);
-      })
-      .catch(function (err) {
-        // There was an error
-        console.warn("Something went wrong.", err);
-      });
+  const getAll = async ()=> {
+    let response = await fetch(`https://uselessapi.com/u-c/all-routes`);
+    let data = await response.json()
+    derta = data
+    setRoutes(derta)
+  }
+  useEffect(() => {
+    getAll()
   });
 
   return (
