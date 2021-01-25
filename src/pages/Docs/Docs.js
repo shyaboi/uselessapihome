@@ -20,7 +20,7 @@ const Docs = (props) => {
     <Router>
       <Container fluid>
         <Row>
-          <Col xs="4">
+          <Col xs={15} md={2}>
             <ListGroup>
               <ListGroupItem className="justify-content-between">
                 <NavLink href="/docs/">Getting Started</NavLink>

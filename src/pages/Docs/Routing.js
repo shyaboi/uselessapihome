@@ -15,10 +15,16 @@ const Routing = (props) => {
             To create a route, simply type in the route you want into the route
             feild similar to the example below.
           </p>
-          <img src={RoutePic} width="600vw" />
+    <Row xs={1} md={2} id="pics">
+
+          <img src={RoutePic} />
+          </Row>
           <hr></hr>
           <p>Once you start typing, your route will be updated live</p>
-          <img src={RoutePicR} width="600vw" />
+    <Row xs={1} md={2} id="pics">
+
+          <img src={RoutePicR} />
+          </Row>
         </Col>
       </Row>
     </Container>

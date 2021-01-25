@@ -30,3 +30,9 @@ code {
 #editor-head{
   text-align: center;
 }
+
+#pics{
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
