@@ -21,18 +21,22 @@ const GettingStarted = (props) => {
         To get started with UselessAPI, the first thing you can do is make a new route/API.
     </p>
     <Suspense fallback={<div>Loading...</div>}>
+    <Row xs={1} md={2} id="pics">
+
     <img src={HomeR} 
-    width='600vw'
     />
+    </Row>
     </Suspense>
     <hr>
     </hr>
     <p>
         To do this, click on the Editor tab on the navigation bar on the top left similar to the example below.
     </p>
+    <Row xs={1} md={2} id="pics">
+
     <img src={HomeRE} 
-    width='600vw'
     />
+    </Row>
     <hr>
     </hr>
     <p>
