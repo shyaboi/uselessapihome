@@ -45,7 +45,6 @@ function Editor() {
   const [themeState, setthemeState] = useState('');
   const [ThemeText, setthemeText] = useState('');
   const [fontSize, setfontSize] = useState('');
-  const [fontSizeText, setfontSizeText] = useState('');
   //END Dropdown Selector states--------------------------------------------------------------------------------------------
   
 
@@ -71,14 +70,17 @@ function Editor() {
 
 useEffect(() => {
   if (localStorage.getItem('currentTheme')) {
-   var theme =  localStorage.getItem('currentTheme');
-   var themeText =  localStorage.getItem('currentThemeText');
-    // console.log( localStorage.getItem('currentTheme'),localStorage.getItem('currentThemeText'))
-    setthemeState(theme)
-    setthemeText(themeText)
+   let theme =  localStorage.getItem('currentTheme');
+   let themeText =  localStorage.getItem('currentThemeText');
+   let fontSizez =  localStorage.getItem('FontSize');
+   // console.log( localStorage.getItem('currentTheme'),localStorage.getItem('currentThemeText'))
+   setthemeState(theme)
+   setthemeText(themeText)
+   setfontSize(fontSizez)
   }else{
     setthemeState('terminal')
     setthemeText('Termial')
+    setfontSize(44)
   }
 },[]);
 
@@ -108,13 +110,18 @@ useEffect(() => {
   };
 
 
-  const changeValue = (e) => {
+  const changeThemeValue = (e) => {
     let currentTheme = e.currentTarget.value
     let currentThemeText = e.currentTarget.textContent
     setthemeState(currentTheme)
     setthemeText(currentThemeText)
     localStorage.setItem('currentTheme', currentTheme);
     localStorage.setItem('currentThemeText', currentThemeText);
+  }
+  const changeFontValue = (e) => {
+    let fontSizez = e.currentTarget.value
+    setfontSize(fontSizez)
+    localStorage.setItem('FontSize', fontSizez);
   }
 
 
@@ -163,24 +170,33 @@ useEffect(() => {
             <DropdownToggle caret >{ThemeText}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Pick Your Editor Theme</DropdownItem>
-              <DropdownItem onClick={changeValue} value='kuroir'>Kuroir</DropdownItem>
-              <DropdownItem onClick={changeValue} value='github'>GitHub</DropdownItem>
-              <DropdownItem onClick={changeValue} value='terminal'>Terminal</DropdownItem>
-              <DropdownItem onClick={changeValue} value='tomorrow'>Tomorrow</DropdownItem>
-              <DropdownItem onClick={changeValue} value='twilight'>Twilight</DropdownItem>
-              <DropdownItem onClick={changeValue} value='xcode'>Xcode</DropdownItem>
-              <DropdownItem onClick={changeValue} value='textmate'>textmate</DropdownItem>
-              <DropdownItem onClick={changeValue} value='solarized_dark'>Solarized Dark</DropdownItem>
-              <DropdownItem onClick={changeValue} value='solarized_light'>Solarized Light</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='kuroir'>Kuroir</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='github'>GitHub</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='terminal'>Terminal</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='tomorrow'>Tomorrow</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='twilight'>Twilight</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='xcode'>Xcode</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='textmate'>textmate</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='solarized_dark'>Solarized Dark</DropdownItem>
+              <DropdownItem onClick={changeThemeValue} value='solarized_light'>Solarized Light</DropdownItem>
             </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={dropdownFontOpen} toggle={toggleFontSize}>
-            <DropdownToggle caret>Font Size</DropdownToggle>
+            <DropdownToggle caret>{fontSize}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Size in px</DropdownItem>
-              <DropdownItem>15</DropdownItem>
-              <DropdownItem>20</DropdownItem>
-              <DropdownItem>25</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={5}>5</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={10}>10</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={15}>15</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={20}>20</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={25}>25</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={30}>30</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={35}>35</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={40}>40</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={45}>45</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={50}>50</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={55}>55</DropdownItem>
+              <DropdownItem onClick={changeFontValue} value={88}>88</DropdownItem>
             </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={dropdownWrapOpen} toggle={toggleWrap}>
@@ -199,7 +215,7 @@ useEffect(() => {
               width="60vw"
               mode="javascript"
               theme={themeState}
-              fontSize={fontSize}
+              fontSize={parseInt(fontSize)}
               editorProps={{ $blockScrolling: true }}
               value={funk}
               onChange={onChange}
