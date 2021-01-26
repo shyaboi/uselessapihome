@@ -35,7 +35,7 @@ const Home = (props) => {
   }
   useEffect(() => {
     getAll()
-  });
+  },[]);
 
   return (
     <Container>

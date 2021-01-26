@@ -36,3 +36,8 @@ code {
     margin-left: auto;
     margin-right: auto
 }
+
+#drop-row > * {
+  display: block;
+  margin: 2em 1em;
+}
