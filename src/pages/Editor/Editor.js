@@ -45,6 +45,8 @@ function Editor() {
   const [themeState, setthemeState] = useState('');
   const [ThemeText, setthemeText] = useState('');
   const [fontSize, setfontSize] = useState('');
+  const [wrapState, setWrapState] = useState(true);
+  const [wrapStateText, setWrapStateText] = useState('');
   //END Dropdown Selector states--------------------------------------------------------------------------------------------
   
 
@@ -73,6 +75,11 @@ useEffect(() => {
    let theme =  localStorage.getItem('currentTheme');
    let themeText =  localStorage.getItem('currentThemeText');
    let fontSizez =  localStorage.getItem('FontSize');
+   let wrap =  localStorage.getItem('Wrap');
+   if (wrap == 'Enabled') {
+     setWrapState(true)
+    setWrapStateText('Enabled')
+   }else{setWrapState(false);setWrapStateText(wrap)}
    // console.log( localStorage.getItem('currentTheme'),localStorage.getItem('currentThemeText'))
    setthemeState(theme)
    setthemeText(themeText)
@@ -81,6 +88,8 @@ useEffect(() => {
     setthemeState('terminal')
     setthemeText('Termial')
     setfontSize(44)
+    setWrapState(true)
+    setWrapStateText('Enabled')
   }
 },[]);
 
@@ -122,6 +131,20 @@ useEffect(() => {
     let fontSizez = e.currentTarget.value
     setfontSize(fontSizez)
     localStorage.setItem('FontSize', fontSizez);
+  }
+  const changeWrapValue = (e) => {
+    let wrap = e.currentTarget.value
+    if (wrap == 1){ 
+      setWrapState(true)
+      setWrapStateText('Enabled')
+      localStorage.setItem('Wrap', 'Enabled');
+    }
+    else { 
+      setWrapState(false)
+      setWrapStateText('Disabled')
+      localStorage.setItem('Wrap', 'Disabled');
+
+    }
   }
 
 
@@ -200,11 +223,11 @@ useEffect(() => {
             </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={dropdownWrapOpen} toggle={toggleWrap}>
-            <DropdownToggle caret>Set Wrap</DropdownToggle>
+            <DropdownToggle caret>Wrap {wrapStateText}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Set text wrap of the editor</DropdownItem>
-              <DropdownItem>Enabled</DropdownItem>
-              <DropdownItem>Disabled</DropdownItem>
+              <DropdownItem onClick={changeWrapValue} value={1}>Enabled</DropdownItem>
+              <DropdownItem onClick={changeWrapValue} value={2}>Disabled</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </Row>
@@ -216,6 +239,7 @@ useEffect(() => {
               mode="javascript"
               theme={themeState}
               fontSize={parseInt(fontSize)}
+              wrapEnabled={wrapState}
               editorProps={{ $blockScrolling: true }}
               value={funk}
               onChange={onChange}
