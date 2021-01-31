@@ -12,6 +12,7 @@ import {
 import Home from '../../pages/Home/Home'
 import Editor from '../../pages/Editor/Editor'
 import Docs from '../../pages/Docs/Docs'
+import All from '../../pages/All/All'
 import {
     BrowserRouter as Router,
     Switch,
@@ -41,6 +42,9 @@ const NavB = (props) => {
             <NavItem>
               <NavLink href="/docs">Documentation</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/all">All Routes Full</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText><NavLink href="/">API.com</NavLink></NavbarText>
         </Collapse>
@@ -59,6 +63,9 @@ const NavB = (props) => {
     </Route>
     <Route path="/docs">
       <Docs />
+    </Route>
+    <Route path="/all">
+      <All />
     </Route>
   </Switch>
 </div>

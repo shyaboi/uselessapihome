@@ -189,8 +189,8 @@ useEffect(() => {
           </Col> */}
         </Row>
         <Row fluid id="drop-row">
-          <Dropdown isOpen={dropdownThemeOpen} toggle={toggleTheme}>
-            <DropdownToggle caret >{ThemeText}</DropdownToggle>
+          <Dropdown isOpen={dropdownThemeOpen} toggle={toggleTheme} >
+            <DropdownToggle caret color='info'>{ThemeText}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Pick Your Editor Theme</DropdownItem>
               <DropdownItem onClick={changeThemeValue} value='kuroir'>Kuroir</DropdownItem>
@@ -205,7 +205,7 @@ useEffect(() => {
             </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={dropdownFontOpen} toggle={toggleFontSize}>
-            <DropdownToggle caret>{fontSize}</DropdownToggle>
+            <DropdownToggle caret color='info'>{fontSize}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Size in px</DropdownItem>
               <DropdownItem onClick={changeFontValue} value={5}>5</DropdownItem>
@@ -223,7 +223,7 @@ useEffect(() => {
             </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={dropdownWrapOpen} toggle={toggleWrap}>
-            <DropdownToggle caret>Wrap {wrapStateText}</DropdownToggle>
+            <DropdownToggle caret color='info'>Wrap {wrapStateText}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Set text wrap of the editor</DropdownItem>
               <DropdownItem onClick={changeWrapValue} value={1}>Enabled</DropdownItem>
