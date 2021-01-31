@@ -45,7 +45,7 @@ const Home = (props) => {
             <Container>
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
               <a href='/all' style={{ padding: '1rem' }}><Button color='info'>Full UseLessAPIs</Button></a>
-              <a href='/editor'><Button color='info'>Make Your Own API</Button></a>
+              <a href='/editor' style={{ padding: '1rem' }}><Button color='info'>Make Your Own API</Button></a>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
                 <p>List of User Made APIs</p>
