@@ -44,10 +44,11 @@ const Home = (props) => {
           <Jumbotron fluid id="jumbo">
             <Container>
               <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
+              <a href='/all' style={{ padding: '1rem' }}><Button color='info'>Full UseLessAPIs</Button></a>
               <a href='/editor'><Button color='info'>Make Your Own API</Button></a>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <p className="lead ">Welcome to UseLessAPI.com</p>
-                <p>User Made APIs</p>
+                <p>List of User Made APIs</p>
                 <DropdownToggle caret color="info">
                   APIs
                 </DropdownToggle>
@@ -66,29 +67,24 @@ const Home = (props) => {
           </Jumbotron>
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col>
         <Suspense fallback={<div>Fetching latest UseLess routes...</div>}>
           {routes.map((routes) => (
             <Card>
               <CardBody>
-                <CardTitle tag="h5">{routes}</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">
-                  {routes}
-                </CardSubtitle>
-                <CardText>
-                  In the future the route/API description will go here.
-                </CardText>
                 <a href={"/u-c-r" + routes}>
                   {" "}
-                  <Button color="info">Take a look at the raw output</Button>
+                  <Button color="info">
+                <CardTitle tag="h5">go to {routes}</CardTitle>
+                  </Button>
                 </a>
               </CardBody>
             </Card>
           ))}
           </Suspense>
         </Col>
-      </Row>
+      </Row> */}
       <Row>
         <Col>
           <Jumbotron fluid id="jumbo">
