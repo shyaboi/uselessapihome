@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Label } from "reactstrap";
 import CodeBlock from "@tenon-io/tenon-codeblock";
 import Edit from '../../assets/images/editor.png'
+import EditDrop from '../../assets/images/editorDrop.png'
+import Drop from '../../assets/images/drop.png'
+import Syn from '../../assets/images/syn.png'
 
 const Editor = (props) => {
   return (
@@ -24,12 +27,21 @@ const Editor = (props) => {
           <hr>
           </hr>
           <p>
-            You can customize the editor to your likeing on the side panel such
+            You can customize the editor to your likeing on the top dropdowns such
             as the example below.
           </p>
     <Row xs={1} md={2} id="pics">
 
-          <img src={Edit}/>
+          <img src={EditDrop}/>
+          </Row>
+<hr>
+</hr>
+          <p>
+            Currently the 3 options to be changed dynamically on the editor are the 'theme', 'font size', and wrap enabled/disabled.
+          </p>
+    <Row xs={1} md={2} id="pics">
+
+          <img src={Drop}/>
           </Row>
 <hr>
 </hr>
@@ -38,7 +50,7 @@ const Editor = (props) => {
 </p>
 <Row xs={1} md={2} id="pics">
 
-<img src={Edit} width="600vw" />
+<img src={Syn} width="600vw" />
 </Row>
         </Col>
       </Row>

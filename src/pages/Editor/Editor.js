@@ -153,7 +153,7 @@ useEffect(() => {
       <Row>
         <Col id="editor-head">
           <Label for="exampleText">
-            <h1>Make your useless thing</h1>
+            <h1>Make your UseLess thing</h1>
           </Label>
         </Col>
       </Row>
