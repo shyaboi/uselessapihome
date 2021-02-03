@@ -16,6 +16,8 @@ A typical UseLess API function will be similar to the example below.
 `response.send("hello world")`
 
 This will sent the string 'hello world' to the endpoint chosen by the user.
+# Documentation 
+You can find more documentaion on usesage of UseLess API in the [UseLessAPI.com/docs](https://uselessapi.com/docs "UseLess API docs")
 
 # Technology Used
 
