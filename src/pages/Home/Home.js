@@ -118,7 +118,7 @@ const Home = (props) => {
       </Row>
       <CardColumns>
         <Card body className="text-center">
-          <CardTitle tag="h5">All the words API</CardTitle>
+          <CardTitle tag="h5">All The Words API</CardTitle>
           <CardImg
             top
             width="100%"
@@ -135,7 +135,7 @@ const Home = (props) => {
             <Button color="info">UselessAPI Page</Button>{" "}
           </a>
         </Card>
-        <Card body className="text-center">
+        {/* <Card body className="text-center">
           <CardTitle tag="h5">PySort API</CardTitle>
           <CardImg
             top
@@ -153,9 +153,9 @@ const Home = (props) => {
           </CardText>
           <a href="https://uselessapi.com/api/py-sort/home">
             {" "}
-            <Button color="info">UselessAPI Page</Button>{" "}s
+            <Button color="info">UselessAPI Page</Button>{" "}
           </a>
-        </Card>
+        </Card> */}
         <Card body className="text-center">
           <CardTitle tag="h5">Open Flags API</CardTitle>
           <CardImg
