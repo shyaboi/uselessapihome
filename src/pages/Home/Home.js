@@ -43,7 +43,7 @@ const Home = (props) => {
         <Col>
           <Jumbotron fluid id="jumbo">
             <Container>
-              <h1 className="display-3 d-none d-sm-block">UselessAPI.com</h1>
+              <h1 className="display-3 d-none d-sm-block">UseLessAPI.com</h1>
               <a href='/all' style={{ padding: '1rem' }}><Button color='info'>Full UseLessAPIs</Button></a>
               <a href='/editor' style={{ padding: '1rem' }}><Button color='info'>Make Your Own API</Button></a>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
