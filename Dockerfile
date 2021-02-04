@@ -3,5 +3,5 @@ FROM nginx:latest
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install --production
-CMD ["node", "./index.js"]
+CMD ["npm run start"]
 EXPOSE 3000
