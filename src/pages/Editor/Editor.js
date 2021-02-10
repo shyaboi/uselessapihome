@@ -113,7 +113,7 @@ useEffect(() => {
     // do something asynchronous that takes time, this function is just an example
     // reset form and loading state
     setIsLoading(false);
-    alert(`Redirecting you to https://uselessapi/u-c-r/${route}`);
+    alert(`Redirecting you to https://uselessapi.com/u-c-r/${route}`);
     window.location.replace(`https://uselessapi.com/u-c-r/${route}`);
     // alert(`your new route can be see at https://uselessapi/u-c-r${route}`);
   };
@@ -162,7 +162,7 @@ useEffect(() => {
           <Col>
             <FormGroup>
               <Label for="exampleEmail">
-                Route will be hosted at https://uselessapi/u-c-r/{route}
+                Route will be hosted at https://uselessapi.com/u-c-r/{route}
                 {/* Example:(https://uselessapi.com/api/u-c-r/my-test) */}
               </Label>
               <Input
