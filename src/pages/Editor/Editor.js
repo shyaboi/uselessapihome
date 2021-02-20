@@ -1,4 +1,6 @@
+// import react usestate and useeffect
 import React, { useState, useEffect } from "react";
+//importing  components from reacctstrap
 import {
   Button,
   Form,
@@ -14,9 +16,8 @@ import {
   DropdownItem,
   toggle,
 } from "reactstrap";
-import { render } from "react-dom";
+//import ace editor_---------------------------------------
 import AceEditor from "react-ace";
-import Togs from "../../components/ToggleSwitch/Toggle";
 import "ace-builds/src-noconflict/mode-javascript";
 // ace theme imports
 import "ace-builds/src-noconflict/theme-kuroir";
@@ -27,12 +28,16 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-xcode";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-solarized_light";
+//END import ace editor_---------------------------------------
+
+// setting a final funtion var
 var finalFunction;
+// set function for on change to make final function = new val
 function onChange(newValue) {
   finalFunction = newValue;
 }
-// var Mona = require('../src/Monaco-Editor/Monaco')
 
+// ssetup the editor function for the component
 function Editor() {
   //Dropdown Open states--------------------------------------------------------------------------------------------
   // const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -65,12 +70,15 @@ function Editor() {
 //Post states--------------------------------------------------------------------------------------------
 
   const [isLoading, setIsLoading] = useState(false);
+  //route state
   let [route, setRoute] = useState("");
+  //function statew
   let [funk, setFunk] = useState("");
 //END Post states--------------------------------------------------------------------------------------------
 
-
+//setup use effect
 useEffect(() => {
+  //if the theme is saved in local storage, then get items and set
   if (localStorage.getItem('currentTheme')) {
    let theme =  localStorage.getItem('currentTheme');
    let themeText =  localStorage.getItem('currentThemeText');
@@ -79,8 +87,9 @@ useEffect(() => {
    if (wrap == 'Enabled') {
      setWrapState(true)
     setWrapStateText('Enabled')
+    // else set the states to default settings
    }else{setWrapState(false);setWrapStateText(wrap)}
-   // console.log( localStorage.getItem('currentTheme'),localStorage.getItem('currentThemeText'))
+ 
    setthemeState(theme)
    setthemeText(themeText)
    setfontSize(fontSizez)
@@ -93,52 +102,68 @@ useEffect(() => {
   }
 },[]);
 
-
+//setting up the submit function for the post
   const onSubmit = async (event) => {
     // prevent redirect
     event.preventDefault();
-    console.log(finalFunction);
-
+    //set the final funtion in state
     setFunk(finalFunction);
+    //set the is loading to true
     setIsLoading(true);
+    //make a new xmlhttp post
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/u-c/new", true);
+    //set headers
     xhr.setRequestHeader("Content-Type", "application/json");
+    //send the post
     xhr.send(
       JSON.stringify({
         route: route,
         funktion: finalFunction,
       })
     );
-    // do something asynchronous that takes time, this function is just an example
+  
     // reset form and loading state
     setIsLoading(false);
+    //alert to new route
     alert(`Redirecting you to https://uselessapi.com/u-c-r/${route}`);
+    //redirect to new route in window
     window.location.replace(`https://uselessapi.com/u-c-r/${route}`);
-    // alert(`your new route can be see at https://uselessapi/u-c-r${route}`);
+   
   };
 
-
+//change theme funtion
   const changeThemeValue = (e) => {
+    //set theme to e.target
     let currentTheme = e.currentTarget.value
     let currentThemeText = e.currentTarget.textContent
+    //set theme to state
     setthemeState(currentTheme)
     setthemeText(currentThemeText)
+    //set theme to local storage
     localStorage.setItem('currentTheme', currentTheme);
     localStorage.setItem('currentThemeText', currentThemeText);
   }
   const changeFontValue = (e) => {
+    //set theme to e.target
     let fontSizez = e.currentTarget.value
+    //set theme to state
     setfontSize(fontSizez)
+    //set theme to local storage
     localStorage.setItem('FontSize', fontSizez);
   }
   const changeWrapValue = (e) => {
+    //set theme to e.target
     let wrap = e.currentTarget.value
+    ///if wrap is true
     if (wrap == 1){ 
+      //set wrap state to true
       setWrapState(true)
       setWrapStateText('Enabled')
+      //save wrap state in local storage
       localStorage.setItem('Wrap', 'Enabled');
     }
+    //else set wrap state to false
     else { 
       setWrapState(false)
       setWrapStateText('Disabled')
@@ -163,7 +188,6 @@ useEffect(() => {
             <FormGroup>
               <Label for="exampleEmail">
                 Route will be hosted at https://uselessapi.com/u-c-r/{route}
-                {/* Example:(https://uselessapi.com/api/u-c-r/my-test) */}
               </Label>
               <Input
                 type="route"
@@ -175,18 +199,6 @@ useEffect(() => {
               />
             </FormGroup>
           </Col>
-          {/* <Col>
-            <FormGroup>
-              <Label for="exampleSelect">Select(not used yet)</Label>
-              <Input type="select" name="select" id="exampleSelect">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-          </Col> */}
         </Row>
         <Row fluid id="drop-row">
           <Dropdown isOpen={dropdownThemeOpen} toggle={toggleTheme} >
