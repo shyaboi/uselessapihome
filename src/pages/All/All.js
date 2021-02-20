@@ -30,6 +30,8 @@ const All = (props) => {
     console.log(roots);
     setRoutes(roots);
   };
+
+  
   useEffect(() => {
     getAll();
   }, []);
