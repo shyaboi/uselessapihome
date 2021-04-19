@@ -117,6 +117,26 @@ const Home = (props) => {
         </Col>
       </Row>
       <CardColumns>
+
+      <Card body className="text-center">
+          <CardTitle tag="h5">R.A.D. Routes</CardTitle>
+          <CardImg
+            top
+            width="100%"
+            src="https://i.ibb.co/yfBJLHf/construct.jpg"
+            alt="Card image cap"
+          />
+          <CardText>
+            R.A.D. Routes is an evolution of Useless API, and will host all it's features
+            and more including file editing, sharing, script execution, and a CLI program.
+            Come be R.A.D. now!
+          </CardText>
+          <a href="https://i.ibb.co/n8RyYzm/2021-04-18-18h53-56.png">
+            {" "}
+            <Button color="info">UselessAPI Page</Button>{" "}
+          </a>
+        </Card>
+
         <Card body className="text-center">
           <CardTitle tag="h5">All The Words API</CardTitle>
           <CardImg
@@ -135,27 +155,7 @@ const Home = (props) => {
             <Button color="info">UselessAPI Page</Button>{" "}
           </a>
         </Card>
-        {/* <Card body className="text-center">
-          <CardTitle tag="h5">PySort API</CardTitle>
-          <CardImg
-            top
-            width="100%"
-            // src="https://i.ibb.co/NSbVQnd/2021-01-06-22h47-17.png"
-            src="https://i.ibb.co/yfBJLHf/construct.jpg"
-            alt="Card image cap"
-          />
-          <CardText>
-            PySort API is an API that will take a given array of numbers, and
-            sort them with the given sorting method. The current methods
-            availible are Bubble Sort, and insertSort. Bubble sort currently has
-            a direct result option, and a step by step return option.(Currently
-            Offline)
-          </CardText>
-          <a href="https://uselessapi.com/api/py-sort/home">
-            {" "}
-            <Button color="info">UselessAPI Page</Button>{" "}
-          </a>
-        </Card> */}
+        
         <Card body className="text-center">
           <CardTitle tag="h5">Open Flags API</CardTitle>
           <CardImg
